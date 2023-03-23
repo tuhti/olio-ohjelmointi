@@ -61,11 +61,20 @@ class Peikko:
 
 class Sankari:
     def __init__(self, nimi):
+        # Luodaan uusi Sankari-olio, jolle annetaan nimi-parametri
+        # Nimi tallennetaan olion omaan muuttujaan "nimi".
+        
         self.nimi = nimi
+        
+        # Arvotaan rohkeus ja katseen_voima -ominaisuudet käyttäen random.randint()-funktiota.
+        # Tämä tehdään olion luonnin yhteydessä, jotta jokaisella sankari-oliolla on erilaiset ominaisuudet
+        # Arvot tallennetaan olion omiin muuttujiin "rohkeus" ja "katseen_voima"
         self.rohkeus = random.randint(1, 10)
         self.katseen_voima = random.randint(1, 10)
        
     def arvo_hurraus(self):
+        # Luodaan lista "hurraukset", joka sisältää viisi erilaista mahdollista hurrausta
+        # Jokainen hurraus sisältää olion nimen, joka saadaan olion "nimi"-ominaisuudella
         hurraukset = [
             f"{self.nimi} on voittamaton sankari!",
             f"{self.nimi} on rohkeampi kuin leijona!",
@@ -73,6 +82,8 @@ class Sankari:
             f"{self.nimi} on kunnianhimoinen ja voitokas!",
             f"{self.nimi} voittaa kaikki haasteet!"
         ]
+        
+        # Palautetaan satunnainen hurraus-listan merkkijono käyttäen random.choice()-funktiota.
         return random.choice(hurraukset)
 
 def hurraa(olio):
